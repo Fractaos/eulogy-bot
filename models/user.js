@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
 	user.associate = function (models) {
 		models.user.belongsTo(models.guild, {
 			foreignKey: {
+				name: `id_guild`,
 				allowNull: false
 			}
 		});

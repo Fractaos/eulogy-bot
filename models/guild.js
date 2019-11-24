@@ -8,7 +8,12 @@ module.exports = (sequelize, DataTypes) => {
 		}, {}
 	);
 	guild.associate = function (models) {
-		models.guild.hasMany(models.user);
+		models.guild.hasMany(models.user, {
+			foreignKey: {
+				name: `id_guild`,
+				allowNull: false
+			}
+		});
 	};
 	return guild;
 };
